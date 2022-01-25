@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "FlowWork.h"
-#include "AutoTrack.h"
+#include "Core/AutoTrackCore.h"
 
 FlowWork::FlowWork()
 {
@@ -10,7 +10,7 @@ FlowWork::~FlowWork()
 {
 }
 
-void FlowWork::append(AutoTrack* at, bool(AutoTrack::*funPtr)(void), int errCode)
+void FlowWork::append(AutoTrackCore* at, bool(AutoTrackCore::*funPtr)(void), int errCode)
 {
 	AT = at;
 	funPtrList.push_back(funPtr);

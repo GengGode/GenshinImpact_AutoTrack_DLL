@@ -4,90 +4,79 @@
 #include "pch.h"
 #include "cvAutoTrack.h"
 
-#include "AutoTrack.h"
+#include "AutoTrackManagement.h"
 
-static AutoTrack _at;
+static AutoTrackManagement _AutoTrackManagement;
 
-bool __stdcall init()
-{
-	return _at.init();
-}
-bool __stdcall uninit()
-{
-	return _at.uninit();
-}
-bool __stdcall SetHandle(long long int handle)
-{
-	return _at.SetHandle(handle);
-}
-bool __stdcall SetWorldCenter(double x, double y)
-{
-	return _at.SetWorldCenter(x, y);
-}
-bool __stdcall SetWorldScale(double scale)
-{
-	return _at.SetWorldScale(scale);
-}
-bool __stdcall GetTransform(float &x, float &y, float &a)
-{
-	return _at.GetTransform(x, y, a);
-}
-bool __stdcall GetPosition(double & x, double & y)
-{
-	return _at.GetPosition(x, y);
-}
-bool __stdcall GetDirection(double & a)
-{
-	return _at.GetDirection(a);
-}
-bool __stdcall GetRotation(double & a)
-{
-	return _at.GetRotation(a);
-}
-bool __stdcall GetStar(double &x, double &y, bool &isEnd)
-{
-	return _at.GetStar(x, y, isEnd);
-}
-bool GetStarJson(char * jsonBuff)
-{
-	return _at.GetStarJson(jsonBuff);
-}
-bool __stdcall GetUID(int & uid)
-{
-	return _at.GetUID(uid);
-}
-bool __stdcall GetInfoLoadPicture(char * path, int & uid, double & x, double & y, double & a)
-{
-	return _at.GetInfoLoadPicture(path, uid, x, y, a);
-}
-bool __stdcall GetInfoLoadVideo(char * path, char * pathOutFile)
-{
-	return _at.GetInfoLoadVideo(path, pathOutFile);
-}
-int __stdcall GetLastErr()
-{
-	return _at.GetLastError();
-}
-const char * __stdcall GetLastErrStr()
-{
-	return _at.GetLastErrorStr();
-}
 bool __stdcall startServe()
 {
-	return _at.startServe();
+	return _AutoTrackManagement.startServe();
 }
 bool __stdcall stopServe()
 {
-	return _at.stopServe();
+	return _AutoTrackManagement.stopServe();
 }
-#ifdef _DEBUG
-
-//bool __stdcall test(char* str)
-//{
-//	str[1024] = '2';
-//	return true;
-//}
-
-//void testLocalVideo(std::string path);
-
-#endif
+bool __stdcall init()
+{
+	return _AutoTrackManagement.init();
+}
+bool __stdcall uninit()
+{
+	return _AutoTrackManagement.uninit();
+}
+bool __stdcall SetHandle(long long int handle)
+{
+	return _AutoTrackManagement.SetHandle(handle);
+}
+bool __stdcall SetWorldCenter(double x, double y)
+{
+	return _AutoTrackManagement.SetWorldCenter(x, y);
+}
+bool __stdcall SetWorldScale(double scale)
+{
+	return _AutoTrackManagement.SetWorldScale(scale);
+}
+bool __stdcall GetTransform(double &x, double&y, double&a)
+{
+	return _AutoTrackManagement.GetTransform(x, y, a);
+}
+bool __stdcall GetPosition(double & x, double & y)
+{
+	return _AutoTrackManagement.GetPosition(x, y);
+}
+bool __stdcall GetDirection(double & a)
+{
+	return _AutoTrackManagement.GetDirection(a);
+}
+bool __stdcall GetRotation(double & a)
+{
+	return _AutoTrackManagement.GetRotation(a);
+}
+bool __stdcall GetStar(double &x, double &y, bool &isEnd)
+{
+	return _AutoTrackManagement.GetStar(x, y, isEnd);
+}
+bool GetStarJson(char * jsonBuff)
+{
+	return _AutoTrackManagement.GetStarJson(jsonBuff);
+}
+bool __stdcall GetUID(int & uid)
+{
+	return _AutoTrackManagement.GetUID(uid);
+}
+bool __stdcall GetInfoLoadPicture(char * path, int & uid, double & x, double & y, double & a)
+{
+	return _AutoTrackManagement.GetInfoLoadPicture(path, uid, x, y, a);
+}
+bool __stdcall GetInfoLoadVideo(char * path, char * pathOutFile)
+{
+	return _AutoTrackManagement.GetInfoLoadVideo(path, pathOutFile);
+}
+int __stdcall GetLastErr()
+{
+	return _AutoTrackManagement.GetLastError();
+}
+const char * __stdcall GetLastErrStr()
+{
+	return _AutoTrackManagement.GetLastErrorStr();
+}

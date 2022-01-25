@@ -214,6 +214,8 @@
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <ExceptionHandling>Async</ExceptionHandling>
       <FunctionLevelLinking>true</FunctionLevelLinking>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -239,6 +241,8 @@
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <ExceptionHandling>Async</ExceptionHandling>
       <FunctionLevelLinking>true</FunctionLevelLinking>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -315,6 +319,8 @@
       <BrowseInformation>false</BrowseInformation>
       <CallingConvention>Cdecl</CallingConvention>
       <UseFullPaths>false</UseFullPaths>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -350,6 +356,8 @@
       <BrowseInformation>false</BrowseInformation>
       <CallingConvention>Cdecl</CallingConvention>
       <UseFullPaths>false</UseFullPaths>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -375,25 +383,52 @@
     <None Include="resource\Source.def" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GetDirectionClass.h" />
+    <ClInclude Include="GetInfoLoadPictureClass.h" />
+    <ClInclude Include="GetPositionClass.h" />
+    <ClInclude Include="GetRotationClass.h" />
+    <ClInclude Include="GetStarClass.h" />
+    <ClInclude Include="GetStarJsonClass.h" />
+    <ClInclude Include="GetTransformClass.h" />
+    <ClInclude Include="GetUIDClass.h" />
     <ClInclude Include="include\cvAutoTrack.h" />
-    <ClInclude Include="src\AutoTrack.h" />
+    <ClInclude Include="GetInfoLoadVideoClass.h" />
+    <ClInclude Include="src\AutoTrackManagement.h" />
     <ClInclude Include="src\Base_SURF.h" />
-    <ClInclude Include="src\Base_Thread.h" />
-    <ClInclude Include="src\cvAT_SAerialization.h" />
+    <ClInclude Include="src\Core\AutoTrackCore.h" />
+    <ClInclude Include="src\cvAT_Serialization.h" />
     <ClInclude Include="src\ErrorCode.h" />
     <ClInclude Include="src\FlowWork.h" />
     <ClInclude Include="src\framework.h" />
     <ClInclude Include="src\GenshinImpactScreen.h" />
     <ClInclude Include="src\Kalmanfilter.h" />
     <ClInclude Include="src\LoadGiMatchResource.h" />
+    <ClInclude Include="src\Logger\LoggingFacility.h" />
+    <ClInclude Include="src\Logger\MatchLogger.h" />
+    <ClInclude Include="src\Logger\StandardOutputLogger.h" />
+    <ClInclude Include="src\Match\MatchBase.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\resource.h" />
+    <ClInclude Include="src\Resource\StaticResource.h" />
+    <ClInclude Include="src\Serialization\KeyPointSerialization.h" />
+    <ClInclude Include="src\Thread\ThreadBase.h" />
+    <ClInclude Include="src\Timer\SystemTime.h" />
+    <ClInclude Include="src\Timer\TimerFacility.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\AutoTrack.cpp" />
+    <ClCompile Include="GetDirectionClass.cpp" />
+    <ClCompile Include="GetInfoLoadPictureClass.cpp" />
+    <ClCompile Include="GetPositionClass.cpp" />
+    <ClCompile Include="GetRotationClass.cpp" />
+    <ClCompile Include="GetStarClass.cpp" />
+    <ClCompile Include="GetStarJsonClass.cpp" />
+    <ClCompile Include="GetTransformClass.cpp" />
+    <ClCompile Include="GetInfoLoadVideoClass.cpp" />
+    <ClCompile Include="GetUIDClass.cpp" />
+    <ClCompile Include="src\AutoTrackManagement.cpp" />
     <ClCompile Include="src\Base_SURF.cpp" />
-    <ClCompile Include="src\Base_Thread.cpp" />
-    <ClCompile Include="src\cvAT_SAerialization.cpp" />
+    <ClCompile Include="src\Core\AutoTrackCore.cpp" />
+    <ClCompile Include="src\cvAT_Serialization.cpp" />
     <ClCompile Include="src\cvAutoTrack.cpp" />
     <ClCompile Include="src\dllmain.cpp" />
     <ClCompile Include="src\ErrorCode.cpp" />
@@ -401,12 +436,15 @@
     <ClCompile Include="src\GenshinImpactScreen.cpp" />
     <ClCompile Include="src\Kalmanfilter.cpp" />
     <ClCompile Include="src\LoadGiMatchResource.cpp" />
+    <ClCompile Include="src\Match\MatchBase.cpp" />
     <ClCompile Include="src\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Delib|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Relib|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\Resource\StaticResource.cpp" />
+    <ClCompile Include="src\Thread\ThreadBase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource\cvAutoTrack.rc" />

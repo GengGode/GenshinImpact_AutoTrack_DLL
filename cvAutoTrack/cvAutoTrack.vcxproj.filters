@@ -11,6 +11,36 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="src\Core">
+      <UniqueIdentifier>{588897e0-ffdb-4f67-b97a-13a865b67f94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Match">
+      <UniqueIdentifier>{c198f074-a3e0-48a2-b2d3-ecdcc088bb25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Thread">
+      <UniqueIdentifier>{043f1dcb-4b95-4481-9dc6-96536b4f7382}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Hook">
+      <UniqueIdentifier>{07445a10-e97a-4cca-9dee-a87ca076c081}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Screen">
+      <UniqueIdentifier>{ab819b5b-087a-494c-8d67-9d10bd3d3516}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Resource">
+      <UniqueIdentifier>{46f1fc8a-37ed-40dd-9c94-9f8b562dbd9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Split">
+      <UniqueIdentifier>{471675ef-08ed-44ac-bb75-0294f825403a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Logger">
+      <UniqueIdentifier>{2ea87ff6-a39e-44d4-bd70-fa89ceee69c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Timer">
+      <UniqueIdentifier>{80b24978-7e40-4459-a48c-417d875cb853}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Serialization">
+      <UniqueIdentifier>{efc418ef-e023-417a-a14c-5caaaebb631e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint">
@@ -24,16 +54,13 @@
     <ClInclude Include="include\cvAutoTrack.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="src\AutoTrack.h">
+    <ClInclude Include="src\AutoTrackManagement.h">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\Base_SURF.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Base_Thread.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\cvAT_SAerialization.h">
+    <ClInclude Include="src\cvAT_Serialization.h">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\ErrorCode.h">
@@ -60,18 +87,54 @@
     <ClInclude Include="src\pch.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\Core\AutoTrackCore.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Match\MatchBase.h">
+      <Filter>src\Match</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Resource\StaticResource.h">
+      <Filter>src\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Thread\ThreadBase.h">
+      <Filter>src\Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Logger\LoggingFacility.h">
+      <Filter>src\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Logger\MatchLogger.h">
+      <Filter>src\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Logger\StandardOutputLogger.h">
+      <Filter>src\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Timer\TimerFacility.h">
+      <Filter>src\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Timer\SystemTime.h">
+      <Filter>src\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="GetPositionClass.h" />
+    <ClInclude Include="src\Serialization\KeyPointSerialization.h">
+      <Filter>src\Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="GetTransformClass.h" />
+    <ClInclude Include="GetDirectionClass.h" />
+    <ClInclude Include="GetInfoLoadVideoClass.h" />
+    <ClInclude Include="GetInfoLoadPictureClass.h" />
+    <ClInclude Include="GetUIDClass.h" />
+    <ClInclude Include="GetRotationClass.h" />
+    <ClInclude Include="GetStarClass.h" />
+    <ClInclude Include="GetStarJsonClass.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\AutoTrack.cpp">
+    <ClCompile Include="src\AutoTrackManagement.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\Base_SURF.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Base_Thread.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\cvAT_SAerialization.cpp">
+    <ClCompile Include="src\cvAT_Serialization.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\cvAutoTrack.cpp">
@@ -98,6 +161,27 @@
     <ClCompile Include="src\pch.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Core\AutoTrackCore.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Match\MatchBase.cpp">
+      <Filter>src\Match</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Resource\StaticResource.cpp">
+      <Filter>src\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Thread\ThreadBase.cpp">
+      <Filter>src\Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="GetPositionClass.cpp" />
+    <ClCompile Include="GetTransformClass.cpp" />
+    <ClCompile Include="GetDirectionClass.cpp" />
+    <ClCompile Include="GetInfoLoadVideoClass.cpp" />
+    <ClCompile Include="GetInfoLoadPictureClass.cpp" />
+    <ClCompile Include="GetUIDClass.cpp" />
+    <ClCompile Include="GetRotationClass.cpp" />
+    <ClCompile Include="GetStarClass.cpp" />
+    <ClCompile Include="GetStarJsonClass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource\cvAutoTrack.rc">

@@ -455,3 +455,8 @@ bool GetInfoLoadVideo(
 > `bool getAllInfo(double &x,double &y,double &a,int &uid);`
 
 获取所有信息，得到最新的状态数据
+
+
+# Bug记录
+
+在领取地脉奖励的时候，无法区分出界面的阴影，以至于地图不会自动隐藏

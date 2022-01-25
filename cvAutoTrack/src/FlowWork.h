@@ -3,19 +3,19 @@
 #include "ErrorCode.h"
 using namespace std;
 
-class AutoTrack;
+class AutoTrackCore;
 
 class FlowWork
 {
-	vector<bool(AutoTrack::*)(void)> funPtrList;
+	vector<bool(AutoTrackCore::*)(void)> funPtrList;
 	vector<int> funErrCodeList;
-	AutoTrack * AT;
+	AutoTrackCore* AT;
 	ErrorCode& err=ErrorCode::getInstance();
 public:
 	FlowWork();
 	~FlowWork();
 
-	void append(AutoTrack* at,bool(AutoTrack::* funPtr)(void),int errCode);
+	void append(AutoTrackCore* at,bool(AutoTrackCore::* funPtr)(void),int errCode);
 
 	bool run();
 };

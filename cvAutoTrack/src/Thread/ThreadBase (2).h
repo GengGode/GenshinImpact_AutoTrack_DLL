@@ -9,12 +9,12 @@ class Mat
 
 };
 template<class cOut, class cIn>
-class Base_Thread
+class ThreadBase
 {
-	thread *ptrThread = nullptr;
+	thread* ptrThread = nullptr;
 
 	Mat workInput;
-	cOut(*ptr)(cIn in) = nullptr;
+	function<cOut(cIn)> ptr= nullptr;
 	bool isExitThread = false;
 	bool isExistFunction = false;
 	bool isRunWork = false;
@@ -24,13 +24,14 @@ class Base_Thread
 
 public:
 	bool isInit = false;
-	Base_Thread();
-	~Base_Thread();
-	Base_Thread(void*(*funPtr)(void* inMat));
-	void setFunction(void*(*funPtr)(void* ));
+	ThreadBase();
+	~ThreadBase();
+	ThreadBase(void* (*funPtr)(void* inMat));
+	void setFunction(void* (*funPtr)(void*));
 
-	void start(Mat & inMat);
+	void start(Mat& inMat);
 	bool isEnd();
 
 };
+
 
