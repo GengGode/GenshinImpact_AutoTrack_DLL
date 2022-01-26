@@ -18,30 +18,6 @@ public:
 
 	bool get(double &x,double &y);
 
-	bool hisPisContinuity(cv::Point2d* hisP, cv::Mat& img_scene);
-
-	void Func_Match_OnCity(cv::Mat& img_scene, cv::Point2d* hisP, cv::Mat& img_object, cv::Point2d& pos);
-
-	void NewFunctionasdasdasd(cv::Mat& img_scene, cv::Point2d* hisP, cv::Mat& someMap, cv::Ptr<cv::xfeatures2d::SURF>& detectorSomeMap, std::vector<cv::KeyPoint>& KeyPointSomeMap, cv::Mat& DataPointSomeMap);
-
-	void NewFunctionxzccxc(cv::Mat& DataPointMiniMap, cv::Mat& DataPointSomeMap, std::vector<double>& lisx, std::vector<double>& lisy, double& sumx, double& sumy, std::vector<cv::KeyPoint>& KeyPointMiniMap, cv::Mat& minMap, std::vector<cv::KeyPoint>& KeyPointSomeMap, cv::Mat& someMap, cv::Mat& img_object);
-
-	void NewFunctionasd(cv::Mat& DataPointMiniMap, cv::Mat& DataPointSomeMap, std::vector<cv::KeyPoint>& KeyPointMiniMap, std::vector<double>& lisx, cv::Mat& minMap, std::vector<cv::KeyPoint>& KeyPointSomeMap, std::vector<double>& lisy, double& sumx, double& sumy, cv::Mat& someMap, cv::Mat& img_object);
-
-	void Func_Match_NotOnCity(cv::Mat& img_scene, cv::Point2d* hisP, cv::Mat& img_object, cv::Point2d& pos);
-
-	bool Func_Match_NotContinuity(cv::Mat& img_object, cv::Mat& img_scene, cv::Point2d& pos, bool& retflag);
-
-	void ShowMatchKeyPoint(cv::Mat& img_scene, std::vector<cv::KeyPoint>& KeyPointAllMap, cv::Mat& imgmap, cv::Mat& img_object, std::vector<cv::KeyPoint>& KeyPointMiniMap, cv::Mat& imgminmap, std::vector<cv::DMatch>& good_matches, cv::Mat& img_matches);
-
-	void Match_GetGoodMatches(std::vector<std::vector<cv::DMatch>>& KNN_mTmp, std::vector<cv::DMatch>& good_matchesTmp, std::vector<cv::KeyPoint>& KeyPointMiniMap, std::vector<double>& lisx, cv::Mat& minMap, std::vector<cv::KeyPoint>& KeyPointSomeMap, std::vector<double>& lisy, double& sumx, double& sumy, double mapScaleTmp);
-
-	void Match_For_GetOffset(std::vector<double>& lisx, std::vector<double>& lisy, cv::Mat& minMap, cv::Point2f& KeyPointMiniMapPt, cv::Point2f& KeyPointSomeMapPt, double mapScaleTmp);
-
-	void NewFunction_B(std::vector<double>& lisx, std::vector<double>& lisy, double sumx, double sumy);
-
-
-
 private:
 	FlowWork wForAfter;
 
