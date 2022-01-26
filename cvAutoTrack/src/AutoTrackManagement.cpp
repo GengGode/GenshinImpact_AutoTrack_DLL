@@ -7,10 +7,6 @@
 
 #include <Thread/ThreadBase.h>
 
-#include "Core/AutoTrackCore.h"
-
-
-static AutoTrackCore ATC;
 
 AutoTrackManagement::AutoTrackManagement(void)
 {

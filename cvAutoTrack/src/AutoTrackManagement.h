@@ -1,11 +1,8 @@
 #pragma once
-
-// 此类是不导出的
-// 维护一个最新的输出
-// 以便支持多线程调用
-
+#include "Core/AutoTrackCore.h"
 
 class AutoTrackManagement {
+	AutoTrackCore ATC;
 public:
 	AutoTrackManagement(void);
 	~AutoTrackManagement(void);

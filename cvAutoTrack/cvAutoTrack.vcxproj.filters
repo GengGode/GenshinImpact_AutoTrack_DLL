@@ -126,6 +126,7 @@
     <ClInclude Include="GetRotationClass.h" />
     <ClInclude Include="GetStarClass.h" />
     <ClInclude Include="GetStarJsonClass.h" />
+    <ClInclude Include="util.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AutoTrackManagement.cpp">

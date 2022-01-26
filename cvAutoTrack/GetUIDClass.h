@@ -23,6 +23,6 @@ private:
 	cv::Mat giUIDRef;
 
 private:
-	bool getUIDRefMat(){}
+	bool getUIDRefMat() { return false; }
 };
 

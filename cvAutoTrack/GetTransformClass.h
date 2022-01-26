@@ -26,6 +26,6 @@ public:
 private:
 	bool is_init_end = false;
 private:
-	bool init(){}
+	bool init() { return false; }
 };
 

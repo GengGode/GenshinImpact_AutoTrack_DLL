@@ -32,7 +32,7 @@ private:
 	bool isStarVisible = false;
 
 private:
-	bool getPaimonRefMat() {}
-	bool getMiniMapRefMat() {}
+	bool getPaimonRefMat() { return false; }
+	bool getMiniMapRefMat() { return false; }
 };
 

@@ -143,7 +143,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <TargetName>CVAUTOTRACK</TargetName>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\src;$(ProjectDir)include;$(opencvstaticinc);$(OpenCvDir)\include;$(OpenCvDir)\include\opencv2;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)\src;$(ProjectDir)include;$(opencvstaticinc);$(OpenCvDir)\include;$(OpenCvDir)\include\opencv2;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
     <LibraryPath>$(opencvstaticlib);$(OpenCvDir)\$(Platform)\vc15\staticlib;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Delib|x64'">
@@ -414,6 +414,7 @@
     <ClInclude Include="src\Thread\ThreadBase.h" />
     <ClInclude Include="src\Timer\SystemTime.h" />
     <ClInclude Include="src\Timer\TimerFacility.h" />
+    <ClInclude Include="util.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GetDirectionClass.cpp" />

@@ -34,7 +34,7 @@ private:
 	cv::Mat giAvatarRef;
 	cv::Mat giStarRef;
 private:
-	bool getPaimonRefMat(){}
-	bool getMiniMapRefMat(){}
+	bool getPaimonRefMat() { return false; }
+	bool getMiniMapRefMat() { return false; }
 };
 

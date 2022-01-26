@@ -78,10 +78,10 @@ private:
 	// ???
 	double screen_scale = 1;
 private:
-	void init() {}
-	bool getPaimonRefMat() {}
-	bool getMiniMapRefMat() {}
-	bool getUIDRefMat() {}
-	bool getAvatarRefMat() {}
+	bool init() { return false; }
+	bool getPaimonRefMat() { return false; }
+	bool getMiniMapRefMat() { return false; }
+	bool getUIDRefMat() { return false; }
+	bool getAvatarRefMat() { return false; }
 };
 

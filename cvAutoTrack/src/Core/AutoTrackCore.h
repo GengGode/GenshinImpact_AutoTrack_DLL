@@ -1,7 +1,6 @@
 #pragma once
 #include <opencv2/opencv.hpp>
 #include <opencv2/xfeatures2d.hpp>
-//#include <opencv2/xfeatures2d/nonfree.hpp>
 #include <iostream>
 #include <Windows.h>
 
@@ -23,6 +22,10 @@
 #include "../../GetInfoLoadPictureClass.h"
 #include "../../GetInfoLoadVideoClass.h"
 
+#include "../../util.h"
+
+
+
 struct Transform {
 	bool result;
 	double x, y, a;
@@ -30,6 +33,38 @@ struct Transform {
 struct Position {
 	bool result;
 	double x, y;
+};
+struct Direction {
+	bool result;
+	double a;
+};
+struct Rotation {
+	bool result;
+	double a2;
+};
+struct Star {
+	bool result;
+	double x, y;
+	bool isEnd;
+};
+struct StarJson {
+	bool result;
+	char* jsonBuff;
+};
+struct UID {
+	bool result;
+	int uid;
+};
+struct InfoLoadPicture {
+	bool result;
+	char* path;
+	int uid;
+	double x, y, a;
+};
+struct InfoLoadVideo {
+	bool result;
+	char* path;
+	char* pathOutFile;
 };
 
 class AutoTrackCore {
@@ -49,6 +84,7 @@ public:
 	bool asyncSetHandle(long long int handle);
 	bool asyncSetWorldCenter(double x, double y);
 	bool asyncSetWorldScale(double scale);
+
 	bool asyncGetTransform(double& x, double& y, double& a);
 	bool asyncGetPosition(double& x, double& y);
 	bool asyncGetDirection(double& a);
@@ -59,19 +95,20 @@ public:
 	bool asyncGetInfoLoadPicture(char* path, int& uid, double& x, double& y, double& a);
 	bool asyncGetInfoLoadVideo(char* path, char* pathOutFile);
 
-	GetTransformClass _transform;
-	GetPositionClass _position;
-	GetDirectionClass _direction;
-	GetRotationClass _rotation;
-	GetStarClass _star;
-	GetStarJsonClass _starJson;
-	GetUIDClass _uid;
-	GetInfoLoadPictureClass _infoLoadPicture;
-	GetInfoLoadVideoClass _infoLoadVideo;
-
-
+	GetTransformClass* _transform;
+	GetPositionClass* _position;
+	GetDirectionClass* _direction;
+	GetRotationClass* _rotation;
+	GetStarClass* _star;
+	GetStarJsonClass* _starJson;
+	GetUIDClass* _uid;
+	GetInfoLoadPictureClass* _infoLoadPicture;
+	GetInfoLoadVideoClass* _infoLoadVideo;
+	util _u;
+	
 	bool init();
 	bool uninit();
+
 	bool SetHandle(long long int handle);
 	bool SetWorldCenter(double x, double y);
 	bool SetWorldScale(double scale);
@@ -94,46 +131,34 @@ public:
 public:
 	Transform TransformData;
 	Position PositionData;
+	Direction DirectionData;
+	Rotation RotationData;
+	Star StarData;
+	StarJson StarJsonData;
+	UID UIDData;
+	InfoLoadPicture InfoLoadPictureData;
+	InfoLoadVideo InfoLoadVideoData;
+
+
+
+
+
 
 	thread* pth_handle;
 	std::atomic<bool> isLoopService;
 	std::atomic<bool> isRunService;
 
+private:
+	ErrorCode& err = ErrorCode::getInstance();
+private:
+	bool is_init_end = false;
 
-//
-//private:
-//	LoadGiMatchResource giMatchResource;
-//	ErrorCode& err = ErrorCode::getInstance();
-//
-//	FlowWork wPaimon;
-//	FlowWork wMiniMap;
-//	FlowWork wAvatar;
-//	FlowWork wRotating;
-//	FlowWork wStar;
-//
-//	FlowWork wUID;
-//
-//	FlowWork wForAfter;
-//
-//	Kalmanfilter posFilter;
-//private:
-//	int error_code = 0;
-//
-//private:
-//	bool is_init_end = false;
-//
-//private:
-//	int minHessian = 400;
-//	double ratio_thresh = 0.66;
-//	double mapScale = 1.3;//1.3;
-//	int someSizeR = 106;
-//	double MatchMatScale = 2.0;
-//
-//	//用户定义映射关系参数
-//	double UserWorldOrigin_X = 0;
-//	double UserWorldOrigin_Y = 0;
-//	double UserWorldScale = 1.0;
-//
+private:
+	//用户定义映射关系参数
+	double UserWorldOrigin_X = 0;
+	double UserWorldOrigin_Y = 0;
+	double UserWorldScale = 1.0;
+
 	// 绝对世界中心 绝对世界缩放系数
 	//World Center on AbsAllMap Coor
 	double WorldCenter_X = 5352; //Abs
@@ -145,75 +170,13 @@ public:
 	double MapWorldAbsOrigin_X = 1703; //from diff Image
 	double MapWorldAbsOrigin_Y = 1718; //from diff Image
 
-	////相对绝对空间缩放系数
-	////Map and AbsAllMap Scale Value, Map * MapAbsScale = AbsAllMap.
-	//double MapAbsScale = 2.557; //from diff Image 67.40%
-
 	//忘了是啥了，记得明天推导
 	//09.07 是个固定值，不用变
 	cv::Point2d MapWorldOffset = cv::Point2d(3412, 2025); // ? forget
-//	//double MapWorldOffset_X = 3412;
-//	//double MapWorldOffset_Y = 2025;
-
-	//也忘了
 	double MapWorldScale = 1.0;
-//
-//	// ???
-//	double screen_scale = 1;
-//
-//
-//private:
-//	//
-//	cv::Ptr<cv::xfeatures2d::SURF> _detectorAllMap;
-//	//
-//	cv::Ptr<cv::xfeatures2d::SURF> _detectorSomeMap;
-//	//
-//	std::vector<cv::KeyPoint> _KeyPointAllMap;
-//	//std::vector<cv::KeyPoint>
-//	std::vector<cv::KeyPoint> _KeyPointSomeMap;
-//	//std::vector<cv::KeyPoint>
-//	std::vector<cv::KeyPoint> _KeyPointMiniMap;
-//	//cv::Mat
-//	cv::Mat _DataPointAllMap;
-//	//cv::Mat
-//	cv::Mat _DataPointSomeMap;
-//	//cv::Mat
-//	cv::Mat _DataPointMiniMap;
-//
-//private:
-//	bool isOnCity = false;
-//	bool isContinuity = false;
-//	bool isConveying = false;
-//	cv::Point2d _TransformHistory[3];
-//	bool is_Auto_getHandle = true;
-//	bool isStarVisible = false;
-//
-//
-//private:
-//	HWND giHandle;
-//	RECT giRect;
-//	RECT giClientRect;
-//	cv::Size giClientSize;
-//	cv::Mat giFrame;
-//	cv::Mat giPaimonRef;
-//	cv::Mat giMiniMapRef;
-//	cv::Mat giUIDRef;
-//	cv::Mat giAvatarRef;
-//	cv::Mat giStarRef;
-
 private:
-	bool getAutoTrackIsInit();
-	bool getGengshinImpactWnd();
-	bool getGengshinImpactRect();
-	bool getGengshinImpactScale();
-	bool getGengshinImpactScreen();
-
-	bool getPaimonRefMat();
-	bool getMiniMapRefMat();
-	bool getUIDRefMat();
-	bool getAvatarRefMat();
-
-
+	bool is_Auto_getHandle = true;
 private:
+	HWND giHandle;
 
 };

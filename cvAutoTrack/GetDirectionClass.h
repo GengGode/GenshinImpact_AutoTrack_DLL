@@ -28,9 +28,9 @@ private:
 	cv::Mat giMiniMapRef;
 	cv::Mat giAvatarRef;
 private:
-	bool getPaimonRefMat() {}
-	bool getMiniMapRefMat() {}
-	bool getAvatarRefMat() {}
+	bool getPaimonRefMat() { return false; }
+	bool getMiniMapRefMat() { return false; }
+	bool getAvatarRefMat() { return false; }
 	
 };
 
