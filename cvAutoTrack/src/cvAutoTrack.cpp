@@ -48,9 +48,9 @@ bool __stdcall GetDirection(double & a)
 {
 	return _AutoTrackManagement.GetDirection(a);
 }
-bool __stdcall GetRotation(double & a)
+bool __stdcall GetRotation(double & a2)
 {
-	return _AutoTrackManagement.GetRotation(a);
+	return _AutoTrackManagement.GetRotation(a2);
 }
 bool __stdcall GetStar(double &x, double &y, bool &isEnd)
 {

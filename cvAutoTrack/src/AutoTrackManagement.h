@@ -52,7 +52,7 @@ public:
 	/// <returns>是否成功获取</returns>
 	bool GetPosition(double &x, double &y);
 	bool GetDirection(double &a);
-	bool GetRotation(double &a);
+	bool GetRotation(double &a2);
 	//获取发现的神瞳坐标,isEnd为真则为当前画面中的最后一个神瞳
 	bool GetStar(double &x, double &y, bool &isEnd);
 	//获取发现的神瞳坐标，以json字符串格式

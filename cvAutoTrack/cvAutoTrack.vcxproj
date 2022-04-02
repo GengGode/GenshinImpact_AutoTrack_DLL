@@ -393,6 +393,8 @@
     <ClInclude Include="GetUIDClass.h" />
     <ClInclude Include="include\cvAutoTrack.h" />
     <ClInclude Include="GetInfoLoadVideoClass.h" />
+    <ClInclude Include="newclass1.h" />
+    <ClInclude Include="newclass2.h" />
     <ClInclude Include="src\AutoTrackManagement.h" />
     <ClInclude Include="src\Base_SURF.h" />
     <ClInclude Include="src\Core\AutoTrackCore.h" />
@@ -426,6 +428,8 @@
     <ClCompile Include="GetTransformClass.cpp" />
     <ClCompile Include="GetInfoLoadVideoClass.cpp" />
     <ClCompile Include="GetUIDClass.cpp" />
+    <ClCompile Include="newclass1.cpp" />
+    <ClCompile Include="newclass2.cpp" />
     <ClCompile Include="src\AutoTrackManagement.cpp" />
     <ClCompile Include="src\Base_SURF.cpp" />
     <ClCompile Include="src\Core\AutoTrackCore.cpp" />

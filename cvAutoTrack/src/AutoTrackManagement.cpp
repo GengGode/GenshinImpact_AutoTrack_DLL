@@ -120,9 +120,9 @@ bool AutoTrackManagement::GetDirection(double& a)
 	return ATC.GetDirection(a);
 }
 
-bool AutoTrackManagement::GetRotation(double& a)
+bool AutoTrackManagement::GetRotation(double& a2)
 {
-	return ATC.GetRotation(a);
+	return ATC.GetRotation(a2);
 }
 
 bool AutoTrackManagement::GetStar(double& x, double& y, bool& isEnd)

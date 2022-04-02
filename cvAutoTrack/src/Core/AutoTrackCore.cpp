@@ -173,9 +173,9 @@ bool AutoTrackCore::GetDirection(double& a)
 	return _direction->get(a);
 }
 
-bool AutoTrackCore::GetRotation(double& a)
+bool AutoTrackCore::GetRotation(double& a2)
 {
-	return _rotation->get(a);
+	return _rotation->get(a2);
 }
 
 bool AutoTrackCore::GetStar(double& x, double& y, bool& isEnd)

@@ -117,7 +117,7 @@ public:
 	bool GetTransform(double& x, double& y, double& a);
 	bool GetPosition(double& x, double& y);
 	bool GetDirection(double& a);
-	bool GetRotation(double& a);
+	bool GetRotation(double& a2);
 	bool GetStar(double& x, double& y, bool& isEnd);
 	bool GetStarJson(char* jsonBuff);
 	bool GetUID(int& uid);

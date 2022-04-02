@@ -127,6 +127,8 @@
     <ClInclude Include="GetStarClass.h" />
     <ClInclude Include="GetStarJsonClass.h" />
     <ClInclude Include="util.h" />
+    <ClInclude Include="newclass1.h" />
+    <ClInclude Include="newclass2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AutoTrackManagement.cpp">
@@ -183,6 +185,8 @@
     <ClCompile Include="GetRotationClass.cpp" />
     <ClCompile Include="GetStarClass.cpp" />
     <ClCompile Include="GetStarJsonClass.cpp" />
+    <ClCompile Include="newclass1.cpp" />
+    <ClCompile Include="newclass2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource\cvAutoTrack.rc">
