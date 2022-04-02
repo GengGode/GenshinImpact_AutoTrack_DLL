@@ -98,7 +98,8 @@ bool AutoTrack::SetHandle(long long int handle)
 		giHandle = (HWND)handle;
 	}
 
-	return IsWindow(giHandle);
+	// uwp
+	return true;// IsWindow(giHandle);
 }
 
 bool AutoTrack::SetWorldCenter(double x, double y)
