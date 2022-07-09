@@ -23,6 +23,8 @@ extern "C" CVAUTOTRACK_API bool verison(char* versionBuff);
 
 extern "C" CVAUTOTRACK_API bool init();
 extern "C" CVAUTOTRACK_API bool uninit();
+extern "C" CVAUTOTRACK_API int  GetGpuCount();
+extern "C" CVAUTOTRACK_API bool SetGpuDevice(int deviceId);
 extern "C" CVAUTOTRACK_API bool SetHandle(long long int handle);
 extern "C" CVAUTOTRACK_API bool SetWorldCenter(double x, double y);
 extern "C" CVAUTOTRACK_API bool SetWorldScale(double scale);
@@ -38,7 +40,7 @@ extern "C" CVAUTOTRACK_API bool GetUID(int &uid);
 extern "C" CVAUTOTRACK_API bool GetInfoLoadPicture(char* path, int &uid, double &x, double &y, double &a);
 extern "C" CVAUTOTRACK_API bool GetInfoLoadVideo(char* path, char* pathOutFile);
 
-extern "C" CVAUTOTRACK_API int GetLastErr();
+extern "C" CVAUTOTRACK_API int  GetLastErr();
 extern "C" CVAUTOTRACK_API const char* GetLastErrStr();
 
 extern "C" CVAUTOTRACK_API bool startServe();

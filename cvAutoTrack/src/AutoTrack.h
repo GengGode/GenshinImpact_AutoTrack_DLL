@@ -20,7 +20,9 @@ public:
 
 	bool init();
 	bool uninit();
-	bool SetHandle(long long int handle);
+	int  GetGpuCount();
+	bool SetGpuDevice(int deviceId = 0);
+	bool SetHandle(long long int handle = 0);
 	bool SetWorldCenter(double x, double y);
 	bool SetWorldScale(double scale);
 	bool GetTransform(float &x, float &y, float &a);

@@ -6,6 +6,7 @@
 
 ## 目前支持任意分辨率，但尚不支持手柄模式
 ## 地图目前支持区域
+## 支持 NVIDA GPU 图形计算加速
 
 | 蒙德 | 雪山 | 璃月 | 稻妻I | 稻妻II() | 稻妻III(鹤观) | 稻妻IIII(渊下宫) | 璃月II(层岩) | 璃月III(地下层岩)
 
@@ -52,6 +53,8 @@
 | `verison`            | 获取Dll版本。                                                    |
 | `init`               | 初始化运行环境。                                                    |
 | `uninit`             | 卸载初始化时所占用的内存。                                           |
+| `GetGpuCount`        | 获取本机可用GPU设备数。                                           |
+| `SetGpuDevice`       | 设置启用GPU设备。                                                  |
 | `GetLastErr`         | 获取最后设置的错误码。                                               |
 | `SetHandle`          | 设置原神客户端的窗口句柄。                                            |
 | `SetWorldCenter`     | 设置映射目标地图坐标系的原点中心所在天理坐标模型中的坐标。               |
@@ -111,6 +114,49 @@ bool uninit();
 
 
 
+## GetGpuCount
+
+```C++
+int GetGpuCount();
+```
+
+获取本机可用GPU设备数。
+
+### 返回值
+
+返回一个整数，表示本机可用的GPU设备数量。
+
+### 说明
+
+已经处在 **未初始化** 状态则不会进行任何操作。
+
+
+
+## SetGpuDevice
+
+```C++
+bool SetGpuDevice(
+    int deviceId = 0
+);
+```
+
+设置启用GPU设备。
+
+### 参数
+
+- `deviceId` GPU设备Id。如果提供 `0`，则自动获取。
+
+### 返回值
+
+- `true` 表示GPU已启用。
+- `false` 表示GPU未能启用，检查错误码以查找原因。
+
+### 说明
+
+设置开启GPU设备以便加速图像计算。如果deviceId超过GPU设备数，则默认选择第一个GPU，如果没有GPU则使用无效。
+
+
+
 ## GetLastErr
 
 ```C++
@@ -150,7 +196,7 @@ int GetLastErr();
 
 ```C++
 bool SetHandle(
-    long long int handle
+    long long int handle = 0
 );
 ```
 
@@ -170,6 +216,7 @@ bool SetHandle(
 某些原神数据的获取是基于原神客户端的，因此需要一个客户端的窗口句柄。默认情况下此句柄由程序自动获取，但有可能会因为编码问题或其它未知的原因而获取不到，此时就需要手动指定客户端的窗口句柄。
 
 注意，不论本函数返回何值，`handle` 只要不是 `0`，就会被设置为窗口句柄，并禁止自动获取窗口句柄。
+
 
 
 ## SetWorldCenter

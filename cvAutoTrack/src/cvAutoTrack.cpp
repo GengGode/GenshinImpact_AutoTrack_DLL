@@ -24,7 +24,15 @@ bool __stdcall uninit()
 {
 	return _at.uninit();
 }
-bool __stdcall SetHandle(long long int handle)
+int __stdcall GetGpuCount()
+{
+	return _at.GetGpuCount();
+}
+bool __stdcall SetGpuDevice(int deviceId = 0)
+{
+	return _at.SetGpuDevice(deviceId);
+}
+bool __stdcall SetHandle(long long int handle = 0)
 {
 	return _at.SetHandle(handle);
 }

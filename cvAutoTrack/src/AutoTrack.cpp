@@ -84,6 +84,16 @@ bool AutoTrack::uninit()
 	return !is_init_end;
 }
 
+int AutoTrack::GetGpuCount()
+{
+	return 0;
+}
+
+bool AutoTrack::SetGpuDevice(int deviceId)
+{
+	return false;
+}
+
 
 bool AutoTrack::SetHandle(long long int handle)
 {
